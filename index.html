@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feliz Cumpleaños!</title>
+    <style>
+        /* CSS: Estilos y Animaciones */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden; /* Evita scroll antes de tiempo */
+            background-color: #fce4ec;
+        }
+
+        /* Sección de Portada */
+        #portada {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #f8bbd0, #f06292);
+            color: white;
+            text-align: center;
+            transition: transform 0.8s ease-in-out;
+        }
+
+        h1 { font-size: 3rem; margin-bottom: 20px; animation: bounce 2s infinite; }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            background-color: white;
+            color: #f06292;
+            border: none;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: 0.3s;
+        }
+
+        button:hover { transform: scale(1.1); background-color: #fce4ec; }
+
+        /* Sección de Contenido (Oculta al inicio) */
+        #contenido {
+            height: 100vh;
+            display: none; /* Se activa con JS */
+            padding: 40px;
+            box-sizing: border-box;
+            overflow-y: auto;
+            background-color: white;
+            text-align: center;
+        }
+
+        .mensaje-texto {
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+            color: #444;
+            font-size: 1.2rem;
+        }
+
+        .foto-placeholder {
+            width: 80%;
+            max-width: 400px;
+            height: 250px;
+            background-color: #ddd;
+            margin: 20px auto;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px dashed #f06292;
+        }
+
+        img {
+            max-width: 70%;
+            max-height: 70%;
+            border-radius: 12px;
+        }
+
+        /* Animaciones */
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-20px);}
+            60% {transform: translateY(-10px);}
+        }
+
+        .fade-in { animation: fadeIn 2s; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    </style>
+</head>
+<body>
+
+    <section id="portada">
+        <h1>¡BITCH! Tengo algo para ti... 🎁</h1>
+        <p>Haz clic en el botón para ver tu sorpresa</p>
+        <br>
+        <button onclick="mostrarMensaje()">Abrir Regalo</button>
+    </section>
+
+    <section id="contenido" class="fade-in">
+        <h2 style="color: #f06292;">¡Feliz Cumpleaños, Mi Devis! 🎂</h2>
+        
+        <div class="mensaje-texto">
+            <p>De: Puma</p>
+            <p><i>"Hola mi Devís, espero y estes teniendo una mañana muy bonita y llena de felicidad, espero “pelos” te esté dando muchos besitos ajajaj. <br><br>
+            
+Al momento de escribir este mensaje no puedo dejar de pensar en aquellos momentos en los que compartimos en el colegio, siempre pensé en que eras una chica muy aplicada y amable. De lo que mas me acuerdo fue cuando tu y Ana se “peleaban” por mi 😆 -mentiris pelos, era de broma- Creo que tuve una buena vida escolar gracias a que las conocí y también al Sebas, siempre pienso, y agradezco el hecho de haber tomado un año sabático luego del agrícola, no creo que haya perdido ese año; porque te pude conocer, estoy orgulloso de ti, una de mis “bitches”. <br><br>
+Querida, solo te deseo muchos éxitos, felicidad y prosperidad, que tus sueños pronto se hagan realidad. Sé cuánto te esfuerzas por salir adelante, en tu trabajo, en tus estudios, recuerda que “el secreto del éxito está en ser constante”. <br>
+Te deseo un muy feliz cumpleaños, que esté lleno de felicidad y de momentos muy memorables, que se diviertan y la pasen sabroso, me hubiera encantado ir, tu sabes que sí. No dejes de divertirte y de ser tu. Yyy aunque quizá no lo parezca, te quiero mucho. Recuerda que puedes contar con mi apoyo cuando lo necesites.  <br><br>
+Por último, permíteme invitarte un café, quiero verte y darte un abrazo de cumple 😊 tu solo dime cuando y donde. 😆
+<br><br><br>
+Bye bye….
+<br><br><br>
+UnPumaSalvaje
+"</i></p>
+        </div>
+
+        <div class="foto-placeholder">
+            <p><img src="20240730_171732.jpg" alt="Tarde en el mirador"> <style></style> </p>
+            </div>
+
+        <div class="mensaje-texto">
+            <p>Gracias por estar siempre ahí. ¡Espero que tengas un día increíble!</p>
+        </div>
+
+        <button onclick="regresar()">Volver al inicio</button>
+    </section>
+
+    <script>
+        // JavaScript para controlar la navegación simple
+        function mostrarMensaje() {
+            document.getElementById('portada').style.display = 'none';
+            document.getElementById('contenido').style.display = 'block';
+            document.body.style.overflow = 'auto'; // Habilita el scroll
+        }
+
+        function regresar() {
+            document.getElementById('portada').style.display = 'flex';
+            document.getElementById('contenido').style.display = 'none';
+            document.body.style.overflow = 'hidden';
+        }
+    </script>
+</body>
+</html>
